@@ -125,6 +125,11 @@ topViewX = -4.5*w;
 topViewY = 0*w;
 topViewZ = 1*w;
 
+%% Maximum Actuations
+
+max_rw_t = 10.0;                                                                                       % Maximum rear wheel torque [N*m]
+max_steer_t = 5.0;                                                                                       % Maximum Steering torque [N*m]
+
 %% Simulation parameters
 
 damp = 0;                                                                                                % Friction in wheel bearings [N*m/(rad/s)]
@@ -133,8 +138,9 @@ damp = 0;                                                                       
 psi0 = 0;                                                                                                % Initial orientation angle [deg]
 
 % IC's on velocity (Rear Wheel)
-v0 = 7.5;                                                                                                % Initial forward velocity [m/s]
-Dtheta0 = v0 / radiusRW;                                                                                 % Initial angular velocity [rad/s] (Required to maintian joint constraints)
+%v0 = 7.5;                                                                                               % Initial forward velocity [m/s]
+v0 = 0.0;                                                                                                
+Dtheta0 = v0 / radiusRW;                                                                                % Initial angular velocity [rad/s] (Required to maintian joint constraints)
 
 % IC's on velocity (Front Wheel)
 v0_FW = v0;                                                                                              % Initial forward velocity [m/s]
@@ -146,3 +152,6 @@ delta0 = 0;                                                                     
 % Initial bike position (Rear Wheel)
 x0 = 0;                                                                                                  % Initial x coordinate [m]
 y0 = 0;                                                                                                  % Initial y coordinate [m]
+
+% velocity reference
+ref_v = 4.0;                                                                                             % reference bike speed [m/s]
