@@ -125,10 +125,19 @@ topViewX = -4.5*w;
 topViewY = 0*w;
 topViewZ = 1*w;
 
-%% Maximum Actuations
+%% Actuation Limits
 
-max_rw_t = 10.0;                                                                                       % Maximum rear wheel torque [N*m]
-max_steer_t = 5.0;                                                                                       % Maximum Steering torque [N*m]
+max_rw_t = 20.0;                                                                                       % Maximum rear wheel torque [N*m]
+max_steer_t = 5.0;                                                                                     % Maximum Steering torque [N*m]
+
+%% isDone triggers
+
+max_lean = 60;                                                                                         % Maximum Lean Angle [deg]
+max_cte = 5;                                                                                           % Maximum Cross Track Error (lateral distance to the disired path) [m]
+max_bike_x = xPla;                                                                                     % Maximum X Coordinate [m]
+max_bike_y = yPla;                                                                                     % Maximum Y Coordinate [m]
+max_yaw = 70;                                                                                          % Maximum Orientation Error [deg]
+max_steering = 60;                                                                                     % Maximum Steering Angle [deg]
 
 %% Simulation parameters
 
