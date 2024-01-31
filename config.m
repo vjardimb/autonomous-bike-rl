@@ -147,8 +147,7 @@ damp = 0;                                                                       
 psi0 = 0;                                                                                                % Initial orientation angle [deg]
 
 % IC's on velocity (Rear Wheel)
-%v0 = 7.5;                                                                                               % Initial forward velocity [m/s]
-v0 = 0.0;                                                                                                
+v0 = 0;                                                                                                 % Initial forward velocity [m/s]
 Dtheta0 = v0 / radiusRW;                                                                                % Initial angular velocity [rad/s] (Required to maintian joint constraints)
 
 % IC's on velocity (Front Wheel)
@@ -160,7 +159,22 @@ delta0 = 0;                                                                     
 
 % Initial bike position (Rear Wheel)
 x0 = 0;                                                                                                  % Initial x coordinate [m]
-y0 = 0;                                                                                                  % Initial y coordinate [m]
+y0 = 0;                                                                                                  % Initial y coordinate [m]                                                                                           % reference bike speed [m/s]
 
-% velocity reference
-ref_v = 4.0;                                                                                             % reference bike speed [m/s]
+%% Path Generation Parameters
+
+path_n_points = 50;
+path_max_dim = 100;
+cvx_hull_n_points = 20;
+
+%% Speed Reference Generator Parameters
+
+min_ref_v = 3;
+max_ref_v = 7;
+
+%% Reinforcement Learning (RL) parameters
+Ts = 0.025;                                                                                              % Agent sample time
+Tf = 10.0;                                                                                               % Simulation end time
+trainingMaxEpisodes = 50;
+DiscountFactor = 0.99;
+MiniBatchSize = 256;
