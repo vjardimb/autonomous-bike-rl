@@ -128,7 +128,7 @@ topViewZ = 1*w;
 %% Actuation Limits
 
 max_rw_t = 20.0;                                                                                       % Maximum rear wheel torque [N*m]
-max_steer_t = 5.0;                                                                                     % Maximum Steering torque [N*m]
+max_steer_t = 2.0;                                                                                     % Maximum Steering torque [N*m]
 
 %% isDone triggers
 
@@ -147,7 +147,7 @@ damp = 0;                                                                       
 psi0 = 0;                                                                                                % Initial orientation angle [deg]
 
 % IC's on velocity (Rear Wheel)
-v0 = 0;                                                                                                 % Initial forward velocity [m/s]
+v0 = 6;                                                                                                 % Initial forward velocity [m/s]
 Dtheta0 = v0 / radiusRW;                                                                                % Initial angular velocity [rad/s] (Required to maintian joint constraints)
 
 % IC's on velocity (Front Wheel)
@@ -175,6 +175,6 @@ max_ref_v = 7;
 %% Reinforcement Learning (RL) parameters
 Ts = 0.025;                                                                                              % Agent sample time
 Tf = 10.0;                                                                                               % Simulation end time
-trainingMaxEpisodes = 50;
+trainingMaxEpisodes = 3000;
 DiscountFactor = 0.99;
 MiniBatchSize = 256;
