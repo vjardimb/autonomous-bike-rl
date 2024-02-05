@@ -136,7 +136,7 @@ max_lean = 60;                                                                  
 max_cte = 5;                                                                                           % Maximum Cross Track Error (lateral distance to the disired path) [m]
 max_bike_x = xPla;                                                                                     % Maximum X Coordinate [m]
 max_bike_y = yPla;                                                                                     % Maximum Y Coordinate [m]
-max_yaw = 70;                                                                                          % Maximum Orientation Error [deg]
+max_yaw = 90;                                                                                          % Maximum Orientation Error [deg]
 max_steering = 60;                                                                                     % Maximum Steering Angle [deg]
 
 %% Simulation parameters

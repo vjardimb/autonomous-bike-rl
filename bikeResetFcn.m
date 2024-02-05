@@ -5,9 +5,6 @@ points = rand(cvx_hull_n_points, 2)*path_max_dim;
 
 % Perform Convex Hull
 k = convhull(points(:, 1), points(:, 2));
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-disp(['convhull K: ', mat2str(k)]);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Initialize input to the spline generator
 spline_param = linspace(0,2*pi,length(k)); 
@@ -22,17 +19,11 @@ random_path = yy';
 
 % Randomly select the initial point
 initialPointIndex = randi(size(random_path, 1));
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-disp(['initialPointIndex: ', num2str(initialPointIndex)]);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 initialPoint = random_path(initialPointIndex, :);
 
 % Translate all points to align the initial point to (0, 0)
 translatedPath = random_path - initialPoint;
-
-%%%%%%%%%%%%%%%%%%%%%%
-disp(['mod: ', num2str(mod(initialPointIndex + 1, size(translatedPath, 1)))]);
-%%%%%%%%%%%%%%%%%%%%%%
 
 % Rotate all points to align the second point with y-coordinate equal to 0
 angle = atan2( ...
