@@ -36,6 +36,11 @@ rotatedPath = (rotationMatrix * translatedPath')';
 % Reorder the path points with the zero-index point as the first point
 transformedPath = circshift(rotatedPath, [1 - initialPointIndex, 0]);
 
+% change path turning direction
+if rand(1) < 0.5
+    transformedPath(:, 2) = -transformedPath(:, 2);
+end
+
 % Calculate the orientation reference for each point
 orientationReference = atan2(transformedPath(2:end, 2) - transformedPath(1:end-1, 2), transformedPath(2:end, 1) - transformedPath(1:end-1, 1));
 orientationReference(path_n_points) = atan2( ...

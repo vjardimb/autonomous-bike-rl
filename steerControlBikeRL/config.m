@@ -167,11 +167,6 @@ path_n_points = 50;
 path_max_dim = 50;
 cvx_hull_n_points = 20;
 
-%% Speed Reference Generator Parameters
-
-min_ref_v = 3;
-max_ref_v = 7;
-
 %% Reinforcement Learning (RL) parameters
 Ts = 0.025;                                                                                              % Agent sample time
 Tf = 10.0;                                                                                               % Simulation end time

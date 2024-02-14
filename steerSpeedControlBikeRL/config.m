@@ -133,11 +133,12 @@ max_steer_t = 2.0;                                                              
 %% isDone triggers
 
 max_lean = 60;                                                                                         % Maximum Lean Angle [deg]
-max_cte = 5;                                                                                           % Maximum Cross Track Error (lateral distance to the disired path) [m]
+max_cte = 7;                                                                                           % Maximum Cross Track Error (lateral distance to the disired path) [m]
 max_bike_x = xPla;                                                                                     % Maximum X Coordinate [m]
 max_bike_y = yPla;                                                                                     % Maximum Y Coordinate [m]
 max_yaw = 90;                                                                                          % Maximum Orientation Error [deg]
-max_steering = 60;                                                                                     % Maximum Steering Angle [deg]
+max_steering = 70;                                                                                     % Maximum Steering Angle [deg]
+max_positive_vel_error = 3;
 
 %% Simulation parameters
 
@@ -147,7 +148,7 @@ damp = 0;                                                                       
 psi0 = 0;                                                                                                % Initial orientation angle [deg]
 
 % IC's on velocity (Rear Wheel)
-v0 = 6;                                                                                                 % Initial forward velocity [m/s]
+v0 = 0;                                                                                                 % Initial forward velocity [m/s]
 Dtheta0 = v0 / radiusRW;                                                                                % Initial angular velocity [rad/s] (Required to maintian joint constraints)
 
 % IC's on velocity (Front Wheel)
@@ -164,7 +165,7 @@ y0 = 0;                                                                         
 %% Path Generation Parameters
 
 path_n_points = 50;
-path_max_dim = 100;
+path_max_dim = 40;
 cvx_hull_n_points = 20;
 
 %% Speed Reference Generator Parameters
@@ -174,7 +175,7 @@ max_ref_v = 7;
 
 %% Reinforcement Learning (RL) parameters
 Ts = 0.025;                                                                                              % Agent sample time
-Tf = 10.0;                                                                                               % Simulation end time
-trainingMaxEpisodes = 3000;
+Tf = 30.0;                                                                                               % Simulation end time
+trainingMaxEpisodes = 1500;
 DiscountFactor = 0.99;
 MiniBatchSize = 256;
