@@ -1,4 +1,4 @@
-function in = SimplebikeResetFcn(in, path_n_points, path_max_dim, cvx_hull_n_points)
+function in = ResetFcn(in, path_n_points, path_max_dim, cvx_hull_n_points)
 
 % randomly generate 20 points in the 2D
 points = rand(cvx_hull_n_points, 2)*path_max_dim;
