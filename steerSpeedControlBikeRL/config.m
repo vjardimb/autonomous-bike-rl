@@ -138,7 +138,7 @@ max_bike_x = xPla;                                                              
 max_bike_y = yPla;                                                                                     % Maximum Y Coordinate [m]
 max_yaw = 90;                                                                                          % Maximum Orientation Error [deg]
 max_steering = 70;                                                                                     % Maximum Steering Angle [deg]
-max_positive_vel_error = 3;
+max_positive_vel_error = 4;
 
 %% Simulation parameters
 
@@ -176,6 +176,6 @@ max_ref_v = 7;
 %% Reinforcement Learning (RL) parameters
 Ts = 0.025;                                                                                              % Agent sample time
 Tf = 30.0;                                                                                               % Simulation end time
-trainingMaxEpisodes = 1500;
+trainingMaxEpisodes = 2000;
 DiscountFactor = 0.99;
 MiniBatchSize = 256;
