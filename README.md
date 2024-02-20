@@ -8,10 +8,7 @@ The project involves using a path of points in the 2D plane as a reference and p
 
 A simulator is developed using Matlab and Simulink, modeling the environment using Simscape Multibody. The simulator is largely inspired by the work of Rizwan Ahmed ([YouTube link](https://www.youtube.com/watch?v=UStQpcYUEko&ab_channel=RPTULRS)).
 
-<figure class="video_container">
-  <iframe src="include/animations/autonomous_bicycle_RL.mp4" frameborder="0" allowfullscreen="false"> 
-</iframe>
-</figure>
+![Bicycle Balancing Video](include/animations/autonomous_bicycle_RL.gif)
 
 ## File Organization
 
