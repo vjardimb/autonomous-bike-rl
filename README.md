@@ -8,4 +8,25 @@ The project involves using a path of points in the 2D plane as a reference and p
 
 A simulator is developed using Matlab and Simulink, modeling the environment using Simscape Multibody. The simulator is largely inspired by the work of Rizwan Ahmed ([YouTube link](https://www.youtube.com/watch?v=UStQpcYUEko&ab_channel=RPTULRS)).
 
-Initially, a Deep Deterministic Policy Gradient (DDPG) agent is trained. Subsequently, a Proportional-Integral-Derivative (PID) controller, with parameters tuned using reinforcement learning, is also implemented. The results and performances of both controllers are compared.
+![Perfomance demonstration](include/animations/autonomous_bicycle_RL.mp4)
+
+## File Organization
+
+- `manualControlBike/`: Basic version of the project where the bike is controlled by explicit inputs. Mainly used for debugging and testing.
+- `steerControlBikeRL/`: Bicycle controlled only by steering. The controller here is a DDPG agent. A simpler and initial version of the challenge. The initial velocity parameter in the `config.m` file should not be zero to make the bike move and balance itself throughout the desired path.
+- `steerSpeedControlBikeRL/`: More complex version of the problem. The cycling torque is now added as a control variable. A reference velocity is set at the beginning of every simulation. Controller is still a DDPG agent.
+- `include/`: Folder holding images, animations, and CAD models necessary for proper simulation.
+- `Extr_Data_Mesh.m`: Function to avoid errors in the `config.m` file.
+- `config.m`: Configuration file with all the necessary parameters for running any of the simulations cited above.
+
+## Usage
+
+1. Clone the repository:
+```bash
+git clone https://github.com/vjardimb/autonomous-bike-rl.git
+```
+2. Navigate to the desired simulation folder, for instance:
+```bash
+cd steerControlBikeRL/
+```
+3. Run the desired .slx file.
